@@ -61,9 +61,9 @@
 
 ## About The Project
 
-[![Netlify deployed page][product-screenshot]](https://storybk.netlify.app)
+[![Netlify deployed page][product-screenshot]](https://storybook-solidjs.netlify.app)
 
-A Storybook component library using the React framework, a rework of [Storybook's introductory tutorial](https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/), created as a raw javascript implementation.
+A Storybook component library using the SolidJS framework, created as a raw javascript implementation.
 
 ### Built with:
 
@@ -73,8 +73,7 @@ A Storybook component library using the React framework, a rework of [Storybook'
   <tr>
     <td><a href="https://tc39.es/"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000"/></a></td>
     <td><a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white"/></a></td>
-    <td><a href="https://reactjs.org"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/></a></td>
-    <td><a href="https://redux.js.org"><img src="https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff"/></a></td>
+    <td><a href="https://solidjs.com"><img src="https://img.shields.io/badge/Solid-2C4F7C?logo=solid&logoColor=fff"/></a></td>
     <td><a href="https://sass-lang.com"><img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff" /></a></td>
     <td><a href="https://storybook.js.org/"><img src="https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=fff" /></a></td>
   </tr>
@@ -95,7 +94,6 @@ A Storybook component library using the React framework, a rework of [Storybook'
 |   ├── images
 ├── src
 |   ├── Main.jsx
-|   ├── readme_assets
 |   ├── components
 |   ├── hooks
 |   ├── store
@@ -105,6 +103,7 @@ A Storybook component library using the React framework, a rework of [Storybook'
 |   ├── manager.js
 |   ├── preview.js
 |   └── vitest.setup.js
+├── readme_assets
 └── vite.config.js
 
 ```
@@ -140,7 +139,7 @@ _For more examples, please refer to [Storybook's documentation](https://storyboo
 
 ## Roadmap
 
-- [ ] create a SolidJS storybook
+- [x] create a SolidJS storybook
 - [ ] add more components to this Storybook
 
 See the [open issues](https://github.com/Mark33Mark/TEMPLATE_storybook_solidjs/issues) for a full list of proposed features (and known issues).
@@ -211,7 +210,7 @@ project: [https://github.com/Mark33Mark/TEMPLATE_storybook_solidjs](https://gith
 [license-url]: https://github.com/Mark33Mark/TEMPLATE_storybook_solidjs/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mark-watsonised/
-[product-screenshot]: readme_assets/storybk_netlify_app_tutorial-tasksdashboard--docs.webp
+[product-screenshot]: readme_assets/storybook-solidjs_netlify_app_tutorial-tasklist--with-pinned-tasks.webp
 
 <!-- Shields.io badges. A comprehensive list with many more badges is at: https://github.com/inttter/md-badges -->
 <!-- API Development -->
@@ -250,9 +249,7 @@ project: [https://github.com/Mark33Mark/TEMPLATE_storybook_solidjs](https://gith
 [docker-url]: https://www.docker.com
 [nodejs]: https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white
 [nodejs-url]: https://nodejs.org
-[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[react-url]: https://reactjs.org
-[redux]: https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff
-[redux-url]: https://redux.js.org
 [sass]: https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff
 [sass-url]: https://sass-lang.com
+[solidjs]: https://img.shields.io/badge/Solid-2C4F7C?logo=solid&logoColor=fff
+[solidjs-url]: https://www.solidjs.com/
