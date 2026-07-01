@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use 'primitives' as *;
+@use '../library/functions' as *;
+
+// Semantic Theme Map
+$theme-colors: (
+    'bg-main': get-color('absolute-white'),
+    'text-main': get-color('grey-900'),
+    'action-primary': get-color('steel-500'),
+    'action-primary-hover': get-color('steel-600'),
+    'surface-card': get-color('absolute-white'),
+    'border-card': get-color('grey-100'),
+    'text-title': get-color('grey-900'),
+    'text-body': get-color('grey-600'),
+);
+
+// Semantic Elevations (Intent-based depth)
+$theme-elevations: (
+    'card-resting': get-shadow('low'),
+    'card-hover': get-shadow('high'),
+    'popover': get-shadow('medium'),
+);
+
+// Semantic Getter
+@function theme-color($key) {
+    @if map.has-key($theme-colors, $key) {
+        @return map.get($theme-colors, $key);
+    }
+    @warn "Unknown theme color `#{$key}` in $theme-colors.";
+    @return null;
+}
+
+// Semantic Getters
+@function theme-color($key) {
+    @return map.get($theme-colors, $key);
+}
+
+@function theme-elevation($key) {
+    @if map.has-key($theme-elevations, $key) {
+        @return map.get($theme-elevations, $key);
+    }
+    @warn "Unknown elevation layer `#{$key}` in $theme-elevations.";
+    @return null;
+}

@@ -1,0 +1,78 @@
+@use '../library' as *;
+@use '../design-tokens' as *;
+
+.W8D-TasksDashboard {
+    height: 100svh;
+    max-height: 100%;
+    min-height: 5rem;
+    margin: 0;
+    overflow-y: auto; /* if content overflow then the scrollbar happens here */
+    background: white;
+
+
+    &ErrorMessageWrapper {
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 45%;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        text-align: center;
+        transform: translate3d(0, -50%, 0);
+    }
+
+    &ErrorMessage_title {
+        line-height: get-spacing('xl');
+        font-weight: 800;
+        color: get-color('grey-600');
+    }
+
+    &ErrorMessage_subtitle {
+        font-size: get-font-size('md-lg');
+        line-height: get-spacing('md-lg');
+        color: get-color('grey-600');
+    }
+
+    &SubtitleMessage_emoticon {
+        margin-top: get-spacing('lg');
+        vertical-align: bottom;
+        font-size: get-font-size('2xl');
+        display: inline-block;
+    }
+}
+
+.W8D-TasksDashboard nav {
+    padding: get-spacing('xl') get-spacing('lg-xl');
+    background: get-color('steel-200');
+    text-align: center;
+}
+
+.W8D-TasksDashboardTitle {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    @include typography('heading-2');
+    color: get-color('grey-700');
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.W8D-TasksDashboardErrorIcon_sadFace {
+    display: block;
+    font-size: 3.75rem;
+    font-weight: 400;
+    line-height: 5rem;
+    color: get-color('steel-400')
+}
+
+.W8D-TasksDashboardErrorIcon_sadFace:before {
+    content: '\2639';
+}
+
+@media screen and (min-width: 40em) {
+    .W8D-TasksDashboard nav {
+        text-align: left;
+    }
+}

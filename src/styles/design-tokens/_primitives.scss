@@ -1,0 +1,157 @@
+// Color Palette (Primitive)
+$base-theme-colour: oklch(0.65 0.2 145);
+
+$green-hue: 140;
+$blue-hue: 208;
+$orange-hue: 64;
+
+$tokens-color: (
+    'absolute-black': oklch(0 0 0),
+    'absolute-white': oklch(1 0 0),
+    'grey-100': oklch(98% 0.01 $blue-hue),
+    'grey-200': oklch(88% 0.01 $blue-hue),
+    'grey-300': oklch(80% 0.01 $blue-hue),
+    'grey-400': oklch(70% 0.01 $blue-hue),
+    'grey-500': oklch(55% 0.02 $blue-hue),
+    'grey-600': oklch(40% 0.02 $blue-hue),
+    'grey-700': oklch(30% 0.02 $blue-hue),
+    'grey-800': oklch(20% 0.02 $blue-hue),
+    'grey-900': oklch(12% 0.02 $blue-hue),
+    'grey-1000': oklch(10% 0.02 $blue-hue),
+    'lime-100': oklch(96% 0.08 $green-hue),
+    'lime-200': oklch(89% 0.23 $green-hue),
+    'lime-300': oklch(83% 0.27 $green-hue),
+    'lime-400': oklch(76% 0.24 $green-hue),
+    'lime-500': oklch(68% 0.22 $green-hue),
+    'lime-600': oklch(59% 0.19 $green-hue),
+    'lime-700': oklch(51% 0.16 $green-hue),
+    'lime-800': oklch(39% 0.13 $green-hue),
+    'lime-900': oklch(29% 0.11 $green-hue),
+    'lime-1000': oklch(25% 0.1 $green-hue),
+    'steel-100': oklch(96% 0.02 $blue-hue),
+    'steel-200': oklch(91% 0.05 $blue-hue),
+    'steel-300': oklch(85% 0.08 $blue-hue),
+    'steel-400': oklch(76% 0.124 $blue-hue),
+    'steel-500': oklch(70% 0.16 $blue-hue),
+    'steel-600': oklch(61% 0.14 $blue-hue),
+    'steel-700': oklch(51% 0.12 $blue-hue),
+    'steel-800': oklch(40% 0.09 $blue-hue),
+    'steel-900': oklch(30% 0.07 $blue-hue),
+    'steel-1000': oklch(25% 0.05 $blue-hue),
+    'sunny-100': oklch(96% 0.02 $orange-hue),
+    'sunny-200': oklch(91% 0.05 $orange-hue),
+    'sunny-300': oklch(85% 0.08 $orange-hue),
+    'sunny-400': oklch(76% 0.124 $orange-hue),
+    'sunny-500': oklch(70% 0.16 $orange-hue),
+    'sunny-600': oklch(61% 0.14 $orange-hue),
+    'sunny-700': oklch(51% 0.12 $orange-hue),
+    'sunny-800': oklch(40% 0.09 $orange-hue),
+    'sunny-900': oklch(30% 0.07 $orange-hue),
+    'sunny-1000': oklch(25% 0.05 $orange-hue),
+);
+
+// Spacing Scale
+$tokens-spacing: (
+    'none': 0,
+    'xxs': 0.125rem,
+    'xs': 0.25rem,
+    'sm': 0.5rem,
+    'sm-md': 0.625rem,
+    'md': 0.75rem,
+    'md-lg': 0.825rem,
+    'lg': 1rem,
+    'lg-xl': 1.25rem,
+    'xl': 1.5rem,
+    'xl-xxl': 1.75rem,
+    '2xl': 2rem,
+    '3xl': 2.5rem,
+    '4xl': 3rem,
+);
+
+// Font-Size
+$tokens-font-size: (
+    'xxs': 0.125rem,
+    'xs': 0.25rem,
+    'sm': 0.5rem,
+    'sm-md': 0.625rem,
+    'md': 0.75rem,
+    'md-lg': 0.825rem,
+    'lg': 1rem,
+    'lg-xl': 1.25rem,
+    'xl': 1.5rem,
+    '2xl': 2rem,
+);
+
+// Shape Scale (Border Radius)
+$tokens-radius: (
+    'none': 0,
+    'xs': 0.125rem,
+    'sm': 0.25rem,
+    'md': 0.5rem,
+    'lg': 0.75rem,
+    'xl': 1rem,
+    'full': 50%,
+);
+
+// Typography Scale
+$tokens-typography: (
+    'body': (
+        'font-family': (
+            Arial,
+            Helvetica,
+            sans-serif,
+        ),
+        'font-size': 1rem,
+        'font-weight': 400,
+        'line-height': 1.5,
+    ),
+    'button': (
+        'font-family': (
+            Arial,
+            Helvetica,
+            sans-serif,
+        ),
+        'font-size': 1rem,
+        'font-weight': 700,
+        'line-height': 1,
+    ),
+    'heading-1': (
+        'font-family': (
+            Arial,
+            Helvetica,
+            sans-serif,
+        ),
+        'font-size': 2.25rem,
+        'font-weight': 700,
+        'line-height': 1.1,
+    ),
+    'heading-2': (
+        'font-family': (
+            Arial,
+            Helvetica,
+            sans-serif,
+        ),
+        'font-size': 1.75rem,
+        'font-weight': 700,
+        'line-height': 1,
+    ),
+    'list': (
+        'font-family': (
+            Arial,
+            Helvetica,
+            sans-serif,
+        ),
+        'font-size': 0.85rem,
+        'font-weight': 500,
+        'line-height': 1.7,
+    ),
+);
+
+// Shadow Scale (Primitive values for elevation layers)
+$tokens-shadow: (
+    'none': 'none',
+    'flat': '0 0 0 1px rgba(0, 0, 0, 0.05)',
+    'low': '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
+    'medium': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04)',
+    'high': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+);

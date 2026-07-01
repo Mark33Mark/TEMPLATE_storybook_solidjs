@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use '../design-tokens/primitives' as *;
+@use '../design-tokens/semantic' as *;
+
+// Apply typography styles from a single token name
+@mixin typography($style) {
+    $type-map: map.get($tokens-typography, $style);
+
+    @if $type-map {
+        font-family: map.get($type-map, 'font-family');
+        font-size: map.get($type-map, 'font-size');
+        font-weight: map.get($type-map, 'font-weight');
+        line-height: map.get($type-map, 'line-height');
+    } @else {
+        @warn "Unknown typography style `#{$style}`.";
+    }
+}
+
+// Use for generating spacing utilities
+@mixin generate-spacing-utilities($property, $prefix) {
+    @each $name, $value in $tokens-spacing {
+        .#{$prefix}-#{$name} {
+            #{$property}: $value;
+        }
+    }
+}
+
+// Apply depth along with uniform performance rules
+@mixin set-elevation($state) {
+    box-shadow: theme-elevation($state);
+
+    // Include standard performance behaviors for transition styles
+    @if $state == 'card-resting' or $state == 'card-hover' {
+        transition:
+            transform 0.2s ease-in-out,
+            box-shadow 0.2s ease-in-out;
+    }
+}

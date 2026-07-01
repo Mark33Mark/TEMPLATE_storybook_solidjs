@@ -1,0 +1,42 @@
+{
+    "name": "template-storybook-solidjs",
+    "version": "0.0.1",
+    "description": "a storybook setup for the react framework.",
+    "author": "Mark Watson <mark@watsonised.me> (https://get.watsonised.me)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mark33Mark/TEMPLATE_storybook_react"
+    },
+    "main": "main.jsx",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "storybook": "storybook dev -p 6006",
+        "build:storybook": "storybook build"
+    },
+    "dependencies": {
+        "solid-js": "^1.9.13"
+    },
+    "devDependencies": {
+        "@storybook/addon-a11y": "^10.4.6",
+        "@storybook/addon-docs": "^10.4.6",
+        "@storybook/addon-vitest": "^10.4.6",
+        "@vitest/browser-playwright": "^4.1.9",
+        "@vitest/coverage-v8": "^4.1.9",
+        "jsdom": "^29.1.1",
+        "playwright": "^1.61.1",
+        "sass": "^1.101.0",
+        "storybook": "^10.4.6",
+        "storybook-solidjs-vite": "^10.5.2",
+        "typescript": "^6.0.3",
+        "vite": "^8.1.0",
+        "vite-plugin-solid": "^2.11.12",
+        "vitest": "^4.1.9"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    }
+}

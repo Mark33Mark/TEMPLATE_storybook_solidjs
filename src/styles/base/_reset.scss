@@ -1,0 +1,176 @@
+// https://www.joshwcomeau.com/css/custom-css-reset/
+
+/*-----------------------------------------------------------------------------
+    [client] Screen Stylesheet
+
+    version:   2.0
+    date:      01-February-2026
+    author:    Mark Watson
+    email:     mark@watsonised.me
+    website:   https://get.watsonised.me
+    changelog: no log created
+    -----------------------------------------------------------------------------*/
+
+// https://en.bem.info/methodology/naming-convention/#react-style
+// BEM = BlockName-ElementName_modifierName_modifierValue
+//
+// observe: Names of blocks and elements begin with an Uppercase Letter.
+//          Names of modifiers begin with a lowercase letter.
+//
+// note: using a double hyphen to separate the modifier from the
+//       element might cause an error when referenced inside a comment (--)
+//       during validation of an HTML document.
+
+// universal settings
+
+// html, *, *::before, *::after {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// 	-webkit-box-sizing: border-box;
+// 	transition: all 0.3s ease-in-out;
+// }
+
+/*
+ * A Modern CSS Reset (2025 Edition)
+ *  https://medium.com/@kaklotarrahul79/a-modern-css-reset-99d6997dbb16
+ * Inspired by Josh Comeau, Andy Bell, and community best practices.
+ * Usage: Apply at the top of your CSS for a clean foundation.
+ */
+
+/* 1. Box-sizing: Border-box for all elements 
+ *    Simplifies layout calculations by ensuring padding and borders are included 
+ *    in the element's total width and height calculation.
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Prevent font size inflation on mobile */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* 3. Remove default margins (except dialog for centering) */
+:not(dialog) {
+    margin: 0;
+}
+
+/* 4. Enable smooth size interpolations for animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth; /* Bonus: Smooth scrolling */
+    }
+}
+
+/* 5. Core body typography */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100svh; /* Small viewport height for full coverage */
+}
+
+/* 6. Shorter line heights for headings and forms */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label,
+select,
+textarea {
+    line-height: 1.1;
+}
+
+/* 7. Balanced text wrapping */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+p {
+    text-wrap: wrap;
+}
+
+/* 8. Media elements: Responsive and block-level */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 9. Inherit fonts in form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 10. Ensure textareas have usable height */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* 11. Remove list styles only for semantic lists */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    padding-inline-start: 0; /* Logical property for RTL */
+}
+
+/* 12. Links: Skip ink on underlines */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* 13. Anchored elements: Extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* 14. Isolation for root (e.g., React/Vue apps) */
+#App,
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* 15. Overflow wrapping for long words */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* apply 'pretty' to browsers that actually support it - Chrome and Safari 
+ * Chromium browsers (Chrome, Edge) and Safari support pretty (which prevents 
+ * orphans at the end of paragraphs), but because Firefox fails to parse this 
+ * specific value, it drops the entire declaration and throws that exact 
+ * console warning.
+ */
+@supports (text-wrap: pretty) {
+    p {
+        text-wrap: pretty;
+    }
+}

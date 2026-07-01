@@ -1,0 +1,75 @@
+@use '../library' as *;
+@use '../design-tokens' as *;
+
+.W8D-Page {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: get-spacing('4xl') get-spacing('lg-xl');
+
+    color: get-color('grey-700');;
+    @include typography('body');
+
+    & h2 {
+        display: inline-block;
+        margin-bottom: get-spacing('sm');
+        vertical-align: top;
+        @include typography('heading-2')
+    }
+
+    & p {
+        margin: get-spacing('lg') get-spacing('none');
+        line-height: get-spacing('xl');
+    }
+
+    & a {
+        border-bottom: 1px dashed get-color('grey-400');
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 1px dotted get-color('steel-800');
+        }
+    }
+
+    & ul {
+        margin: get-spacing('lg') get-spacing('none');
+        padding-left: get-spacing('lg');
+    }
+
+    & li {
+        margin-bottom: get-spacing('sm');
+    }
+
+    &TipWrapper {
+        margin: get-spacing('2xl') get-spacing('none');
+    }
+
+    &Tip {
+        font-size: get-font-size('md-lg');
+    }
+
+    &Tip_badge {
+        display: inline-block;
+        border-radius: get-radius('xl');
+        margin-right: get-spacing('sm-md');
+        padding: 0.25rem 0.75rem;
+        vertical-align: middle;
+        background: #e7fdd8;
+        color: get-color('lime-800');
+        @include typography('button')
+
+    }
+
+    &ViewportLogo {
+        height: 2rem;
+        width: 2rem;
+        display: inline-block;
+        padding: get-spacing('none') get-spacing('xs');
+        vertical-align: middle;
+    }
+
+    &TipWrapper svg path {
+        fill: get-color('steel-800');
+    }
+}

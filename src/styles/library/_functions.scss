@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use 'sass:string';
+@use '../design-tokens/primitives' as *;
+
+// Get a primitive color
+@function get-color($key) {
+    @if map.has-key($tokens-color, $key) {
+        @return map.get($tokens-color, $key);
+    }
+    @warn "Unknown color `#{$key}` in $tokens-color.";
+    @return null;
+}
+
+// Get a spacing value
+@function get-spacing($key) {
+    @if map.has-key($tokens-spacing, $key) {
+        @return map.get($tokens-spacing, $key);
+    }
+    @warn "Unknown spacing `#{$key}` in $tokens-spacing.";
+    @return null;
+}
+
+// Get a font-size value
+@function get-font-size($key) {
+    @if map.has-key($tokens-font-size, $key) {
+        @return map.get($tokens-font-size, $key);
+    }
+    @warn "Unknown font-size `#{$key}` in $tokens-font-size.";
+    @return null;
+}
+
+// Get a primitive border-radius
+@function get-radius($key) {
+    @if map.has-key($tokens-radius, $key) {
+        @return map.get($tokens-radius, $key);
+    }
+    @warn "Unknown radius `#{$key}` in $tokens-radius.";
+    @return null;
+}
+
+// Get a primitive shadow string
+@function get-shadow($key) {
+    @if map.has-key($tokens-shadow, $key) {
+        @return string.unquote(map.get($tokens-shadow, $key));
+    }
+    @warn "Unknown shadow `#{$key}` in $tokens-shadow.";
+    @return null;
+}

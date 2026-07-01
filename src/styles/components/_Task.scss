@@ -1,0 +1,194 @@
+@use '../library' as *;
+@use '../design-tokens' as *;
+
+.W8D-Task {
+    &ListItem {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background: get-color('grey-100');
+        font-size: get-font-size('md-lg');
+        will-change: transform;
+        // transition: all ease-out 150ms;
+    }
+
+    &ListItem &TitleLabel {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &CheckboxLabel {
+        height: 3rem;
+        width: 3rem;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    &CheckboxLabel input[type='checkbox'] {
+        visibility: hidden;
+        font-size: get-font-size('lg');
+    }
+
+    &Checkbox + span:before {
+        width: 1rem;
+        height: 1rem;
+        display: block;
+
+        position: absolute;
+        top: 35%;
+        bottom: auto;
+        right: auto;
+        left: 35%;
+
+        background: transparent;
+        box-shadow: get-color('steel-500') 0 0 0 2px inset;
+        content: '';
+    }
+
+    &Checkbox:checked + span:before {
+        box-shadow: none;
+        
+        font-size: get-font-size('xl');
+        color: get-color('steel-500');
+        line-height: get-spacing('md');
+        content: '\2714';
+    }
+
+    &Textbox {
+        width: 100%;
+        background: transparent;
+    }
+
+    &Textbox:focus {
+        cursor: text;
+    }
+
+    &PinButton {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        outline: none;
+        background: transparent;
+        text-align: center;
+        color: get-color('grey-400');
+        // transition: all 200ms ease-in;
+    }
+
+    &PinButton:hover {
+        color: get-color('steel-400')
+    }
+    &PinButton:focus {
+        outline-color: transparent;
+    }
+
+    &PinButton:active {
+        color: get-color('grey-600');
+    }
+
+    &StarIcon:before {
+        content: '\2606';
+        font-size: get-font-size('xl');
+        vertical-align: center;
+    }
+
+    &ListItem.TASK_PINNED &StarIcon:before {
+        content: '\2605';
+        color: get-color('sunny-500');
+    }
+
+    &ListItem.TASK_ARCHIVED input[type='text'] {
+        color: get-color('grey-500');
+        text-decoration: line-through;
+    }
+
+    &ListItem:hover {
+        background-image: linear-gradient(to bottom, get-color('grey-100') 0%, get-color('steel-200') 100%);
+    }
+
+    &ListItem:hover &CheckboxLabel {
+        cursor: pointer;
+    }
+
+    &ListItem + &ListItem {
+        border-top: 1px solid get-color('steel-200');
+    }
+}
+
+.W8D-TaskListItems {
+    position: relative;
+    min-height: 288px;
+    background: get-color('grey-200');
+
+    &WrapperMessage {
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 45%;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        text-align: center;
+        transform: translate3d(0, -50%, 0);
+    }
+
+    &WrapperMessage &SubtitleMessage {
+        font-size: 0.85rem;
+        line-height: 20px;
+        color: #4a5568;
+    }
+
+    &SubtitleMessage_emoticon {
+        font-size:  get-font-size('2xl');
+        margin-top:  get-spacing('lg');
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    &Loading {
+        height: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background: get-color('grey-100');
+        line-height: get-spacing('lg');
+        cursor: progress;
+    }
+
+    &GlowCheckbox {
+        margin-left: get-spacing('lg');
+    }
+
+    &GlowCheckbox,
+    &GlowText span {
+        display: inline-block;
+        background: get-color('grey-200');
+        color: transparent;
+        cursor: progress;
+        animation: glow 3s ease-in-out infinite;
+    }
+
+    &GlowCheckbox {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin-right: get-spacing('md-lg');
+    }
+
+    &Loading + &Loading {
+        border-top: 1px solid get-color('grey-100');
+    }
+}
+
+@keyframes glow {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.33;
+    }
+}

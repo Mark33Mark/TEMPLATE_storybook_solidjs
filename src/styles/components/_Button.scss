@@ -1,0 +1,99 @@
+@use '../library' as *;
+@use '../design-tokens' as *;
+
+.W8D-Button {
+    display: inline-flex;
+    align-items: center;
+    border: get-spacing('xxs') solid transparent; /* a transparent border prevents layout shift on focus */
+    border-radius: get-radius('sm');
+    min-height: 3rem; /* exceeds minimum 44px mobile touch target */
+    justify-content: center;
+
+    @include typography('button');
+    text-decoration: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+
+    &_primary {
+        box-shadow: get-shadow('medium');
+        background-color: get-color('steel-700');
+        color: get-color('grey-100');
+    }
+    &_secondary {
+        box-shadow: get-shadow('medium');
+        // background-color: transparent;
+        background-color: get-color('lime-700');
+        color: get-color('grey-100');
+    }
+    &_small {
+        padding: get-spacing('sm-md') get-spacing('lg');
+        font-size: get-font-size('md');
+    }
+    &_medium {
+        padding: get-spacing('md') get-spacing('xl');
+        font-size: get-font-size('md-lg');
+    }
+    &_large {
+        padding: get-spacing('lg') get-spacing('2xl');
+        font-size: get-font-size('lg');
+    }
+
+    /* FOCUS STATE (Keyboard tabbing) */
+    /* :focus-visible shows ring for keyboard and remains hidden for mouse clicks */
+    &_primary:focus-visible,
+    &_secondary:focus-visible,
+    &_primary[data-focus-visible='true'],
+    &_secondary[data-focus-visible='true'] {
+        outline: 0.25rem solid transparent; /* Hide default browser outline */
+        border-color: get-color('grey-100'); /* Inner separation ring */
+        box-shadow: 0 0 0 4px var(--btn-focus-ring); /* Highly visible outer target ring */
+    }
+
+    /* ACTIVE STATE (Physical click/press) */
+    &:active {
+        background-color: var(--btn-bg-active);
+        transform: translateY(1px); /* subtle 'pressed down' micro-interaction */
+        box-shadow: get-shadow('low');
+    }
+
+    /* DISABLED STATE (non-interactive) */
+    &:disabled,
+    &[disabled] {
+        background-color: get-color('grey-100');
+        color: get-color('grey-400');
+        box-shadow: none;
+        transform: none;
+        cursor: not-allowed;
+        pointer-events: none; /* disable mouse hover events completely */
+    }
+
+    /* HOVER STATE - mouse users only */
+    @media (hover: hover) {
+        &_primary:hover {
+            background-color: get-color('steel-800');
+            box-shadow: get-shadow('medium');
+        }
+
+        &_secondary:hover {
+            color: get-color('grey-100');
+            background-color: get-color('lime-900');
+            box-shadow: get-shadow('medium');
+        }
+    }
+
+    /* Accessibility: Turn off movement animations if a user prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        & {
+            transition: none;
+            &:active {
+                transform: none;
+            }
+        }
+    }
+}
