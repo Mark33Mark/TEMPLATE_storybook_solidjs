@@ -18,7 +18,7 @@ body {
     padding: 0;
 
     background-color: get-color('steel-400');
-    
+
     color: get-color('grey-700');
     @include typography('body');
     -webkit-font-smoothing: antialiased;
@@ -33,7 +33,7 @@ label {
 
     border: 0;
     vertical-align: middle;
-    
+
     font-weight: normal;
     font-style: normal;
     font-size: 100%;
@@ -62,4 +62,12 @@ textarea {
 
     color: get-color('grey-700');
     @include typography('list');
+}
+
+#solidjs {
+    height: 100svh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
 }

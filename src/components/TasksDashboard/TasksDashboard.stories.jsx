@@ -3,7 +3,7 @@ import { TasksDashboard } from './TasksDashboard';
 import { createMockStore, MockedState, MockedErrorState } from '../../utilities';
 
 const meta = {
-    title: 'Tutorial/TasksDashboard',
+    title: 'Example/Tasks/TasksDashboard',
     component: TasksDashboard,
     tags: ['autodocs'],
     // Enforce a valid semantic region parent for every story scenario wrapper
@@ -33,12 +33,7 @@ export const Default = {
 };
 
 export const Error = {
-    decorators: [
-        story => (
-            // wrap with StoreProvider and seed it with your error state template
-            <StoreProvider storeValue={createMockStore(MockedErrorState)}>{story()}</StoreProvider>
-        ),
-    ],
+    decorators: [story => <StoreProvider storeValue={createMockStore(MockedErrorState)}>{story()}</StoreProvider>],
     parameters: {
         a11y: {
             // tell the underlying axe-core engine to bypass structural landmark checks

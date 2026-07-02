@@ -12,6 +12,7 @@ export const TaskList = () => {
 
     // 3. Simple action wrappers (no dispatch needed)
     const pinTask = (event, id, currentState) => {
+        event.stopPropagation();
         const newTaskState = currentState === 'TASK_PINNED' ? 'TASK_UNPINNED' : 'TASK_PINNED';
         prepareFlip(); // 1. Freeze-frame current DOM positions
         storeInstance.updateTaskState(id, newTaskState);

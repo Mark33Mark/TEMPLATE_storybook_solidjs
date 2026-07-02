@@ -1,12 +1,13 @@
 import { createSignal } from 'solid-js';
 import { Header } from '../Header';
+import { TasksDashboard } from '../TasksDashboard';
 import { ViewportSymbol } from '../../assets/images';
 
 export const Page = () => {
     const [user, setUser] = createSignal(undefined);
 
     return (
-        <article>
+        <article className='W8D-Page'>
             <Header
                 user={ user() }
                 onLogin={ () => setUser({ name: 'Jane Doe' }) }
@@ -14,7 +15,7 @@ export const Page = () => {
                 onCreateAccount={ () => setUser({ name: 'Jane Doe' }) }
             />
 
-            <section className='W8D-Page'>
+            <section className='W8D-PageSection'>
                 <h2>Pages in Storybook</h2>
                 <p>
                     We recommend building UIs with a{' '}
@@ -55,6 +56,9 @@ export const Page = () => {
                         Viewports addon in the toolbar
                     </p>
                 </div>
+            </section>
+            <section className='W8D-PageSection'>
+                <TasksDashboard />
             </section>
         </article>
     );

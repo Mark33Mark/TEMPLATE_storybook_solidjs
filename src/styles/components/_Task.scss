@@ -3,7 +3,7 @@
 
 .W8D-Task {
     &ListItem {
-        height: 100%;
+        height: auto;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -51,7 +51,7 @@
 
     &Checkbox:checked + span:before {
         box-shadow: none;
-        
+
         font-size: get-font-size('xl');
         color: get-color('steel-500');
         line-height: get-spacing('md');
@@ -59,8 +59,14 @@
     }
 
     &Textbox {
-        width: 100%;
+        min-width: 15rem;
+        width: 95%;
+        text-overflow: ellipsis;
         background: transparent;
+        text-wrap: wrap;
+        resize: none;
+        padding: 1rem 0;
+        padding-bottom: 0.5rem;
     }
 
     &Textbox:focus {
@@ -75,11 +81,10 @@
         background: transparent;
         text-align: center;
         color: get-color('grey-400');
-        // transition: all 200ms ease-in;
     }
 
     &PinButton:hover {
-        color: get-color('steel-400')
+        color: get-color('steel-400');
     }
     &PinButton:focus {
         outline-color: transparent;
@@ -100,9 +105,13 @@
         color: get-color('sunny-500');
     }
 
-    &ListItem.TASK_ARCHIVED input[type='text'] {
+    &ListItem.TASK_ARCHIVED textarea[type='text'] {
         color: get-color('grey-500');
         text-decoration: line-through;
+    }
+
+    &ListItem.TASK_ARCHIVED &StarIcon:before {
+        visibility: hidden;
     }
 
     &ListItem:hover {
@@ -142,8 +151,8 @@
     }
 
     &SubtitleMessage_emoticon {
-        font-size:  get-font-size('2xl');
-        margin-top:  get-spacing('lg');
+        font-size: get-font-size('2xl');
+        margin-top: get-spacing('lg');
         display: inline-block;
         vertical-align: bottom;
     }
