@@ -7,7 +7,7 @@ import { createMockStore, MockedState } from '../../utilities';
 import { expect, userEvent, within } from 'storybook/test';
 
 const meta = {
-    title: 'Tutorial/TaskList',
+    title: 'Example/Tasks/TaskList',
     component: TaskList,
     decorators: [story => <div>{story()}</div>],
     tags: ['autodocs'],

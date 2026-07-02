@@ -4,10 +4,11 @@ import { expect, fn, within, userEvent, spyOn } from 'storybook/test';
 import { Button } from '../components';
 
 export default {
-    title: 'Hooks/useAnimateList',
+    title: 'Example/Hooks/useAnimateList',
     parameters: {
         chromatic: { disableSnapshot: true },
     },
+    tags: ['autodocs'],
 };
 
 const HookHarness = () => {
@@ -48,14 +49,6 @@ const HookHarness = () => {
 
     return (
         <div style={{ 'background-color': 'white', padding: '2rem 1.5rem' }}>
-            <Button
-                data-testid="trigger-btn"
-                onClick={handleClick}
-                label={'Shuffle Tasks'}
-                size={'medium'}
-                style={{ 'margin-top': '2rem' }}
-            />
-
             <div ref={simulateMissingContainer() ? null : setContainer} data-testid="list-container">
                 <For each={items()}>
                     {item => (
@@ -65,6 +58,15 @@ const HookHarness = () => {
                     )}
                 </For>
             </div>
+
+            <Button
+                data-testid="trigger-btn"
+                onClick={handleClick}
+                label={'Shuffle Tasks'}
+                size={'medium'}
+                style={{ 'margin-top': '2rem' }}
+            />
+
         </div>
     );
 };
@@ -74,7 +76,6 @@ export const TestFullHookCoverage = {
     args: { onAnimateSpy: fn() },
 
     play: async ({ canvas, step }) => {
-
         const triggerButton = canvas.getByTestId('trigger-btn');
         const containerNode = canvas.getByTestId('list-container');
 
@@ -120,9 +121,9 @@ export const TestFullHookCoverage = {
             const brokenChild = document.createElement('div');
             brokenChild.innerText = 'Broken Task Node';
 
-            // Give the brokenChild an ID so it passes the "!id" check, 
+            // Give the brokenChild an ID so it passes the "!id" check,
             // but because it's new, it won't exist in the firstRect cache map!
-            brokenChild.setAttribute('data-id', '999'); 
+            brokenChild.setAttribute('data-id', '999');
             containerNode.appendChild(brokenChild);
 
             window.__testHelpers.setItems(prev => [...prev].reverse());

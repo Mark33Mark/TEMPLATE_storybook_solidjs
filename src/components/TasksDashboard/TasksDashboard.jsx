@@ -11,11 +11,13 @@ export const TasksDashboard = () => {
             <Show
                 when={!storeInstance.state?.error}
                 fallback={
-                    <div class="W8D-TasksDashboardErrorMessageWrapper" role="status">
-                        <span class='W8D-TasksDashboardErrorIcon_sadFace' aria-hidden="true" />
-                        <p class="W8D-TasksDashboardErrorMessage_title">Oh no!</p>
+                    <div class="W8D-TasksDashboardErrorMessageWrapper" role="alert">
+                        <span class="W8D-TasksDashboardErrorIcon_sadFace" aria-hidden="true"></span>
+
+                        <h2 class="W8D-TasksDashboardErrorMessage_title">Oh no!</h2>
+
                         <p class="W8D-TasksDashboardErrorMessage_subtitle">
-                            {storeInstance.state?.error || 'Something went wrong'}
+                            {storeInstance.state?.error || 'We were unable to get your tasks, please try again later.'}
                         </p>
                     </div>
                 }

@@ -21,8 +21,10 @@ export const Task = props => {
             </label>
 
             <label htmlFor={`task-title_${props.task.id}`} aria-label={props.task.title} class="W8D-TaskTitleLabel">
-                <input
+                <textarea
                     id={`task-title_${props.task.id}`}
+                    rows="2"
+                    cols="1"
                     type="text"
                     name="title"
                     class="W8D-TaskTextbox"
@@ -32,8 +34,8 @@ export const Task = props => {
                 />
             </label>
 
-            {/* using Solid's <Show> instead of logical short-circuits (&&) */}
-            <Show when={props.task.state !== 'TASK_ARCHIVED'}>
+            {/* removed this logic in favour of using CSS and retaining the container the icon occupies during TASK_ARCHIVED state */}
+            {/* <Show when={props.task.state !== 'TASK_ARCHIVED'}> */}
                 <button
                     class="W8D-TaskPinButton"
                     onClick={event => props.onPinTask(event, props.task.id, props.task.state)}
@@ -42,7 +44,7 @@ export const Task = props => {
                 >
                     <span class="W8D-TaskStarIcon" />
                 </button>
-            </Show>
+            {/* </Show> */}
         </div>
     );
 };

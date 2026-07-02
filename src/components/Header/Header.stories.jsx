@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 import { Header } from './Header';
 
 const meta = {
-    title: 'Example/Header',
+    title: 'Example/Pages/Header',
     component: Header,
     tags: ['autodocs'],
     parameters: {

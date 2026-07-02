@@ -1,7 +1,7 @@
 import { render } from 'solid-js/web';
-import { TasksDashboard } from './components';
+import { Page } from './components';
 import './styles';
 
 const root = document.getElementById('solidjs');
 
-render(() => <TasksDashboard />, root);
+render(() => <Page />, root);

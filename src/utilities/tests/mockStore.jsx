@@ -17,7 +17,7 @@ export const MockedState = {
 export const MockedErrorState = {
     tasks: [],
     status: 'failed',
-    error: 'Something went wrong',
+    error: 'We were unable to get your tasks, please try again later.',
 };
 
 // Reusable mock factory function for all component tests and stories
