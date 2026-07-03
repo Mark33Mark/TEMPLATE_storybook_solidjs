@@ -41,8 +41,8 @@ const HookHarness = () => {
     };
 
     const taskBarStyle = {
-        width: '80vw',
-        padding: '0.75rem',
+        'width': '80vw',
+        'padding': '0.75rem',
         'border-top': '1px solid oklch(91% 0.05 208deg)',
         'background-color': 'oklch(98% 0.01 208deg)',
     };

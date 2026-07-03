@@ -18,7 +18,6 @@ export default meta;
 export const Default = {
     decorators: [story => <StoreProvider storeValue={createMockStore(MockedState)}>{story()}</StoreProvider>],
     play: async ({ canvas, canvasElement, step }) => {
-        // const canvas = within(canvasElement);
 
         await step('Item wrapper class updates with user interaction pinning item', async () => {
             const pinTask1 = canvas.getByRole('button', { name: 'PinTask-1' });

@@ -6,9 +6,9 @@
     margin: 0 auto;
 
     &Section {
-        margin: 0 auto;
+        margin: get-spacing('xl') auto;
         max-width: 600px;
-        padding: get-spacing('sm') get-spacing('lg-xl');
+        padding: get-spacing('lg') get-spacing('lg-xl');
 
         background: get-color('steel-200');
 
