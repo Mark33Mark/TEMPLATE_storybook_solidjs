@@ -1,5 +1,8 @@
 import { expect, userEvent, within } from 'storybook/test';
 
+import { StoreProvider } from '../../store';
+import { createMockStore, MockedState } from '../../utilities';
+
 import { Page } from './Page';
 
 const meta = {
@@ -12,9 +15,14 @@ const meta = {
 
 export default meta;
 
-export const LoggedOut = {};
+export const LoggedOut = {
+        decorators: [
+        story => <StoreProvider storeValue={createMockStore({ ...MockedState, tasks: [] })}>{story()}</StoreProvider>,
+    ],
+};
 
 export const LoggedIn = {
+    decorators: [story => <StoreProvider storeValue={createMockStore(MockedState)}>{story()}</StoreProvider>],
     play: async ({ canvas, step }) => {
 
         await step('Login button clicked', async () => {
